@@ -7,9 +7,8 @@ library(normentR)
 library(formattable)
 library(numbers)
 
-setwd("/home/kasper/nas/GenNet/")
-gene_annotation <- fread("/home/kasper/nas/X/gwas/annotation/rs_hugo_conversion_nearest.txt")
-severe_bim <- fread("/home/kasper/nas/additional_gwas/severe/data/plink_data/pku_inter99.bim") %>%
+gene_annotation <- fread("rs_hugo_conversion_nearest.txt")
+severe_bim <- fread("bmfile.bim") %>%
   dplyr::rename(CHR=V1, SNP=V2, POS=V3, BP=V4, A1=V5, A2=V6)
 
 snp2gene <- left_join(severe_bim, gene_annotation, by = "SNP" ) %>%
@@ -28,7 +27,7 @@ snp2gene %>%
   mutate(gene_col = as.numeric(rowname)-1) -> gene_cols
 
 
-write.table(gene_cols, "/home/kasper/Phenotype_prediction/gene_cols.tsv",
+write.table(gene_cols, "gene_cols.tsv",
             row.names = F, col.names = T, quote = F, sep = "\t")
 
 
@@ -44,5 +43,5 @@ left_join(data_snp_row, gene_cols, by = "Gene") %>%
   dplyr::select(snp, gene) -> connectivity
 
 
-write.table(connectivity, "/home/kasper/Phenotype_prediction/connectivty_pruned.tsv",
+write.table(connectivity, "connectivty_pruned.tsv",
             row.names = F, col.names = T, quote = F, sep = "\t")
