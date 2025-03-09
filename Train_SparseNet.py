@@ -20,8 +20,8 @@ from plink_datasets import *
 
 #dask.config.set({"array.slicing.split_large_chunks": True})
 
-geno_path = "/home/kasper/nas/additional_gwas/severe/data/plink_data/riskAlleles_hos6"
-pheno_path = "/home/kasper/nas/additional_gwas/severe/phenotypes/hos6.pheno.txt"
+geno_path = "/home/user/directory/plink_data/genotypes/"
+pheno_path = "/home/user/directory/phenotypes/hos6.pheno.txt"
 
 geno_data = SmartPlink(geno_path, pheno_path)
 
@@ -39,7 +39,7 @@ test_loader = DataLoader(test_split, batch_size = batch_size)
 # In[59]:
 
 
-net = SparseNet(topology_path="/home/kasper/Phenotype_prediction/connectivty.tsv",
+net = SparseNet(topology_path="/home/user/Phenotype_prediction/connectivty.tsv",
                 hidden_features=500)
 
 
