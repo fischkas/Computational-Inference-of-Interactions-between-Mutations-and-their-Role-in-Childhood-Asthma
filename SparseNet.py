@@ -12,7 +12,7 @@ from sklearn.metrics import matthews_corrcoef
 class SparseNet(nn.Module):
 
     def __init__(self, 
-                 topology_path="/home/kasper/Phenotype_prediction/connectivty.tsv",
+                 topology_path="/home/user/Phenotype_prediction/connectivty.tsv",
                  hidden_features=50):
         super(SparseNet, self).__init__()
 
