@@ -2,7 +2,8 @@
 Using deep learning to predict complex traits using genotypes, utilizing non-linearity of a MLP. NID is an algorithm developed by M. Tsang, that is subsequently applied on a trained MLP to predict genetically mediated complex traits, to discover epistatic interactions between single-nucleotide polymorphisms (SNPs).
 See M. Tsangs' github: https://github.com/mtsang/neural-interaction-detection
 
-All code in this repo is created without the use of aritifical intelligence.
+
+A quick overview of the architecture of the neural network (MLP) used in this project.
 
 
 <img width="766" alt="Screenshot 2025-03-11 at 9 41 44 PM" src="https://github.com/user-attachments/assets/7ac787d2-8ad7-498f-8ef8-c38dfd8ee186" />
@@ -28,9 +29,6 @@ In order to validate the ability of NID to discover epistatic interactions we ha
 <img width="419" alt="Screenshot 2025-03-11 at 9 50 35 PM" src="https://github.com/user-attachments/assets/2f1cec38-5f76-48a7-95f8-cfd06277d299" />
 
 
-Training over a 1000 model runs
-
-<img width="609" alt="Screenshot 2025-03-11 at 9 52 18 PM" src="https://github.com/user-attachments/assets/0725c929-c8f5-4687-b628-a3d70c248287" />
 
 Recovery of simulated interactions with comparison with shuffle phenotypes (null distribution). We see clearly that the ground truth interactions populates the lower ranking interaciotns (i.e. strongest interactions) quantified by NID and recovered by Sackett's algorithm. This is the rank over 1000 model runs.
 
